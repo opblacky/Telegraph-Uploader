@@ -1,5 +1,4 @@
-#    This file is part of the ChannelAutoForwarder distribution (https://github.com/Benchamxd/Telegraph-Uploader).
-#    Copyright (c) 2021 Rithunand
+#    Copyright (c) 2021 Vaibhav
 #    
 #    This program is free software: you can redistribute it and/or modify  
 #    it under the terms of the GNU General Public License as published by  
@@ -9,8 +8,6 @@
 #    WITHOUT ANY WARRANTY; without even the implied warranty of 
 #    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU 
 #    General Public License for more details.
-# 
-#    License can be found in < https://github.com/Benchamxd/Telegraph-Uploader/blob/main/License> 
 
 import os
 from telegraph import upload_file
@@ -86,18 +83,18 @@ async def home(client, message):
     ],
     [
         InlineKeyboardButton('Our Channel', url='http://telegram.me/indusbots'),
-        InlineKeyboardButton('Source Code', url='https://github.com/benchamxd/Telegraph-Uploader')
+        InlineKeyboardButton('Dev', url='https://t.me/Vaibhav_xd')
     ]]
   reply_markup = InlineKeyboardMarkup(buttons)
   await Tgraph.send_message(
         chat_id=message.chat.id,
         text="""<b>Hey there,
         
-im a telegraph Uploader That Can Upload Photo, Video And Gif
+Hi, I am a Telegraph Uploader Bot That Can Upload Photo, Video And Gif
         
-Simply send me photo, video or gif to upload to Telegra.ph
+Simply send me a photo, video or gif to upload to Telegra.ph
         
-Made With Love By @indusBots</b>""",
+Made With Love By @CyronBots</b>""",
         reply_markup=reply_markup,
         parse_mode="html",
         reply_to_message_id=message.message_id
@@ -110,12 +107,12 @@ async def help(client, message):
         InlineKeyboardButton('Close', callback_data='close')
     ],
     [
-        InlineKeyboardButton('Our Channel', url='http://telegram.me/indusbots')
+        InlineKeyboardButton('Our Channel', url='http://telegram.me/BotzCarnival')
     ]]
   reply_markup = InlineKeyboardMarkup(buttons)
   await Tgraph.send_message(
         chat_id=message.chat.id,
-        text="""There Is Nothung To KnowMore,
+        text="""There Is Nothung To Know More,
         
 Just Send Me A Video/gif/photo Upto 5mb.
 
