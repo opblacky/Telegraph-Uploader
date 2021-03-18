@@ -82,7 +82,7 @@ async def home(client, message):
         InlineKeyboardButton('Close', callback_data='close')
     ],
     [
-        InlineKeyboardButton('Our Channel', url='http://telegram.me/BotzCarnival'),
+        InlineKeyboardButton('Our Channel', url='http://telegram.me/DirtSheetBotz'),
         InlineKeyboardButton('Dev', url='https://t.me/Vaibhav_xd')
     ]]
   reply_markup = InlineKeyboardMarkup(buttons)
@@ -91,7 +91,7 @@ async def home(client, message):
         text="""<b>Hi,
 I am a Telegraph Uploader Bot!
 Just Send me a photo, video or gif to upload to Telegraph.
-Made By @DirtSheet
+Made By @DirtSheetBotz
         </b>""",
         reply_markup=reply_markup,
         parse_mode="html",
@@ -105,14 +105,14 @@ async def help(client, message):
         InlineKeyboardButton('Close', callback_data='close')
     ],
     [
-        InlineKeyboardButton('Our Channel', url='http://telegram.me/DirtSheet')
+        InlineKeyboardButton('Our Channel', url='http://telegram.me/DirtSheetBotz')
     ]]
   reply_markup = InlineKeyboardMarkup(buttons)
   await Tgraph.send_message(
         chat_id=message.chat.id,
         text="""<b>
 There Is Nothing To Know More,
-Just Send Me A Video/gif/photo Upto 5mb.
+Just Send Me A Video/gif/photo Upto 5 MB.
 I'll upload it to telegraph and give you the direct link</b>""",
         reply_markup=reply_markup,
         parse_mode="html",
