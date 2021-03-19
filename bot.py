@@ -87,7 +87,7 @@ async def home(client, message):
   reply_markup = InlineKeyboardMarkup(buttons)
   await Tgraph.send_message(
         chat_id=message.chat.id,
-        text="""<b>Hi {}, I am a Telegraph Uploader Bot!
+        text="""<b>Hi, I am a Telegraph Uploader Bot!
 Just Send me a photo, video or gif to upload to Telegraph.
         </b>""",
         reply_markup=reply_markup,
@@ -108,8 +108,9 @@ async def help(client, message):
   await Tgraph.send_message(
         chat_id=message.chat.id,
         text="""<b>
-There's no help needed, just send me a photo/gif/video [not in a file format otherwise I would not be able to upload it to telegra.ph]
-And The Video/gif/photo' size can be upto 5 MB.
+There's no help needed, just send me a 
+photo/gif/video [not in a file format otherwise I would not be able to upload it to telegra.ph]
+And The Video/gif/photo's size can be upto 5 MB.
 </b>""",
         reply_markup=reply_markup,
         parse_mode="html",
