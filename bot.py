@@ -32,7 +32,7 @@ async def uploadphoto(client, message):
   userid = str(message.chat.id)
   img_path = (f"./DOWNLOADS/{userid}.jpg")
   img_path = await client.download_media(message=message, file_name=img_path)
-  await msg.edit_text("`Tʀʏɪɴɢ Tᴏ Uᴘʟᴏᴀᴅ.....`")
+  await msg.edit_text("Processing...")
   try:
     tlink = upload_file(img_path)
   except:
@@ -44,7 +44,7 @@ async def uploadphoto(client, message):
 @Tgraph.on_message(filters.animation)
 async def uploadgif(client, message):
   if(message.animation.file_size < 5242880):
-    msg = await message.reply_text("`Tʀʏɪɴɢ Tᴏ Dᴏᴡɴʟᴏᴀᴅ`")
+    msg = await message.reply_text("Downloading...")
     userid = str(message.chat.id)
     gif_path = (f"./DOWNLOADS/{userid}.mp4")
     gif_path = await client.download_media(message=message, file_name=gif_path)
@@ -56,12 +56,12 @@ async def uploadgif(client, message):
     except:
       await msg.edit_text("Something really Happend Wrong...") 
   else:
-    await message.reply_text("Size Should Be Less Than 5 mb")
+    await message.reply_text("The Size Should Be Less Than 5 MB")
 
 @Tgraph.on_message(filters.video)
 async def uploadvid(client, message):
   if(message.video.file_size < 5242880):
-    msg = await message.reply_text("`Tʀʏɪɴɢ Tᴏ Dᴏᴡɴʟᴏᴀᴅ`")
+    msg = await message.reply_text("Downloading...")
     userid = str(message.chat.id)
     vid_path = (f"./DOWNLOADS/{userid}.mp4")
     vid_path = await client.download_media(message=message, file_name=vid_path)
@@ -73,7 +73,7 @@ async def uploadvid(client, message):
     except:
       await msg.edit_text("Something really Happend Wrong...") 
   else:
-    await message.reply_text("Size Should Be Less Than 5 mb")
+    await message.reply_text("The Size Should Be Less Than 5 MB")
 
 @Tgraph.on_message(filters.command(["start"]))
 async def home(client, message):
@@ -82,16 +82,13 @@ async def home(client, message):
         InlineKeyboardButton('Close', callback_data='close')
     ],
     [
-        InlineKeyboardButton('Our Channel', url='http://telegram.me/DirtSheetBotz'),
-        InlineKeyboardButton('Dev', url='https://t.me/Vaibhav_xd')
+        InlineKeyboardButton('Our Channel', url='http://telegram.me/DiRTiQ')
     ]]
   reply_markup = InlineKeyboardMarkup(buttons)
   await Tgraph.send_message(
         chat_id=message.chat.id,
-        text="""<b>Hi,
-I am a Telegraph Uploader Bot!
+        text="""<b>Hi {}, I am a Telegraph Uploader Bot!
 Just Send me a photo, video or gif to upload to Telegraph.
-Made By @DirtSheetBotz
         </b>""",
         reply_markup=reply_markup,
         parse_mode="html",
@@ -105,15 +102,15 @@ async def help(client, message):
         InlineKeyboardButton('Close', callback_data='close')
     ],
     [
-        InlineKeyboardButton('Our Channel', url='http://telegram.me/DirtSheetBotz')
+        InlineKeyboardButton('Our Channel', url='http://telegram.me/DiRTiQ')
     ]]
   reply_markup = InlineKeyboardMarkup(buttons)
   await Tgraph.send_message(
         chat_id=message.chat.id,
         text="""<b>
-There Is Nothing To Know More,
-Just Send Me A Video/gif/photo Upto 5 MB.
-I'll upload it to telegraph and give you the direct link</b>""",
+There's no help needed, just send me a photo/gif/video [not in a file format otherwise I would not be able to upload it to telegra.ph]
+And The Video/gif/photo' size can be upto 5 MB.
+</b>""",
         reply_markup=reply_markup,
         parse_mode="html",
         reply_to_message_id=message.message_id
