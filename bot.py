@@ -28,15 +28,15 @@ Tgraph = Client(
 
 @Tgraph.on_message(filters.photo)
 async def uploadphoto(client, message):
-  msg = await message.reply_text("`Tʀʏɪɴɢ Tᴏ Dᴏᴡɴʟᴏᴀᴅ`")
+  msg = await message.reply_text("Uᴘʟᴏᴀᴅɪɴɢ...")
   userid = str(message.chat.id)
   img_path = (f"./DOWNLOADS/{userid}.jpg")
   img_path = await client.download_media(message=message, file_name=img_path)
-  await msg.edit_text("Processing...")
+  await msg.edit_text("ᴘʟᴇᴀꜱᴇ ᴡᴀɪᴛ...")
   try:
     tlink = upload_file(img_path)
   except:
-    await msg.edit_text("`Something went wrong`") 
+    await msg.edit_text("Sᴏᴍᴇᴛʜɪɴɢ Wᴇɴᴛ Wʀᴏɴɢ") 
   else:
     await msg.edit_text(f"https://telegra.ph{tlink[0]}")     
     os.remove(img_path) 
@@ -44,36 +44,36 @@ async def uploadphoto(client, message):
 @Tgraph.on_message(filters.animation)
 async def uploadgif(client, message):
   if(message.animation.file_size < 5242880):
-    msg = await message.reply_text("Downloading...")
+    msg = await message.reply_text("Dᴏᴡɴʟᴏᴀᴅɪɴɢ...")
     userid = str(message.chat.id)
     gif_path = (f"./DOWNLOADS/{userid}.mp4")
     gif_path = await client.download_media(message=message, file_name=gif_path)
-    await msg.edit_text("`Tʀʏɪɴɢ Tᴏ Uᴘʟᴏᴀᴅ.....`")
+    await msg.edit_text("Uᴘʟᴏᴀᴅɪɴɢ...")
     try:
       tlink = upload_file(gif_path)
       await msg.edit_text(f"https://telegra.ph{tlink[0]}")   
       os.remove(gif_path)   
     except:
-      await msg.edit_text("Something really Happend Wrong...") 
+      await msg.edit_text("ꜱᴏᴍᴇᴛʜɪɴɢ ʀᴇᴀʟʟʏ ʜᴀᴘᴘᴇɴᴅ ᴡʀᴏɴɢ...") 
   else:
-    await message.reply_text("The Size Should Be Less Than 5 MB")
+    await message.reply_text("ᴛʜᴇ ꜱɪᴢᴇ ꜱʜᴏᴜʟᴅ ʙᴇ ʟᴇꜱꜱ ᴛʜᴀɴ 5 ᴍʙ.")
 
 @Tgraph.on_message(filters.video)
 async def uploadvid(client, message):
   if(message.video.file_size < 5242880):
-    msg = await message.reply_text("Downloading...")
+    msg = await message.reply_text("ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ...")
     userid = str(message.chat.id)
     vid_path = (f"./DOWNLOADS/{userid}.mp4")
     vid_path = await client.download_media(message=message, file_name=vid_path)
-    await msg.edit_text("`Tʀʏɪɴɢ Tᴏ Uᴘʟᴏᴀᴅ.....`")
+    await msg.edit_text("Dᴏᴡɴʟᴏᴀᴅɪɴɢ...")
     try:
       tlink = upload_file(vid_path)
       await msg.edit_text(f"https://telegra.ph{tlink[0]}")     
       os.remove(vid_path)   
     except:
-      await msg.edit_text("Something really Happend Wrong...") 
+      await msg.edit_text("ꜱᴏᴍᴇᴛʜɪɴɢ ʀᴇᴀʟʟʏ ʜᴀᴘᴘᴇɴᴅ ᴡʀᴏɴɢ...") 
   else:
-    await message.reply_text("The Size Should Be Less Than 5 MB")
+    await message.reply_text("ᴛʜᴇ ꜱɪᴢᴇ ꜱʜᴏᴜʟᴅ ʙᴇ ʟᴇꜱꜱ ᴛʜᴀɴ 5 ᴍʙ.")
 
 @Tgraph.on_message(filters.command(["start"]))
 async def home(client, message):
@@ -82,13 +82,13 @@ async def home(client, message):
         InlineKeyboardButton('Close', callback_data='close')
     ],
     [
-        InlineKeyboardButton('Our Channel', url='http://telegram.me/DiRTiQ')
+        InlineKeyboardButton('Our Channel', url='http://telegram.me/Nextink')
     ]]
   reply_markup = InlineKeyboardMarkup(buttons)
   await Tgraph.send_message(
         chat_id=message.chat.id,
-        text="""<b>Hi, I am a Telegraph Uploader Bot!
-Just Send me a photo, video or gif to upload to Telegraph.
+        text="""<b>Hi, I am a Telegraph Uploader Bot. (Created On 20/03/21)
+Just Send me a photo, video or gif (with compression) to upload to Telegraph.
         </b>""",
         reply_markup=reply_markup,
         parse_mode="html",
@@ -102,7 +102,7 @@ async def help(client, message):
         InlineKeyboardButton('Close', callback_data='close')
     ],
     [
-        InlineKeyboardButton('Our Channel', url='http://telegram.me/DiRTiQ')
+        InlineKeyboardButton('Our Channel', url='http://telegram.me/Nextink')
     ]]
   reply_markup = InlineKeyboardMarkup(buttons)
   await Tgraph.send_message(
